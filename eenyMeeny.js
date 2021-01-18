@@ -50,6 +50,7 @@ $(document).ready(function() {
     });
 
     $(".clearNames").on("click", function(){
+        // Clear names array and names list
         names = [];
         $(".names-list").empty();
     });
