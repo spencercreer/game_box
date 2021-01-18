@@ -8,38 +8,76 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="dice.css">
   </head>
   <body>
-    <div class="jumbotron jumbotron-fluid">
+    <div class="jumbotron jumbotron-fluid" id="homePage">
         <div class="container">
           <h1 class="display-4">Math.Random()</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
           <div class="btn-group-vertical">
-              <button class="btn btn-lg btn-success btn-group">Dice Roll</button>
-              <button class="btn btn-lg btn-success btn-group">Coin Flip</button>
-              <button class="btn btn-lg btn-success btn-group">Eenie, Meenie</button>
+              <button class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</button>
+              <button class="btn btn-lg btn-success btn-group coinBtn">Coin Flip</button>
+              <button class="btn btn-lg btn-success btn-group eenyMeenyBtn">Eeny, Meeny</button>
             </div>
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" hidden>
+      <div class="jumbotron jumbotron-fluid" id="dicePage">
         <div class="container">
           <h1 class="display-4">Dice Roll</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <div class="container">
+            <div class="dice" id="dice1" style="display: none;">
+              <div class="dot" id="dot1"></div>
+            </div>
+            <div class="dice" id="dice2" style="display: none;">
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+            </div>
+            <div class="dice" id="dice3" style="display: none;">
+              <div class="dot" id="dot1"></div>
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+            </div>
+            <div class="dice" id="dice4" style="display: none;">
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+              <div class="dot" id="dot4"></div>
+              <div class="dot" id="dot5"></div>
+            </div>
+            <div class="dice" id="dice5" style="display: none;">
+              <div class="dot" id="dot1"></div>
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+              <div class="dot" id="dot4"></div>
+              <div class="dot" id="dot5"></div>
+            </div>
+            <div class="dice" id="dice6" style="display: none;">
+              <div class="dot" id="dot2"></div>
+              <div class="dot" id="dot3"></div>
+              <div class="dot" id="dot4"></div>
+              <div class="dot" id="dot5"></div>
+              <div class="dot" id="dot6"></div>
+              <div class="dot" id="dot7"></div>
+            </div>
+          </div>
+          <button type="button" class="btn btn-lg btn-danger rollBtn" style="width: 170px;">Roll</button>
+          <button type="button" class="btn btn-lg btn-danger addDiceBtn" style="width: 170px;">Add</button>
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" hidden>
+      <div class="jumbotron jumbotron-fluid" id="coinPage" style="display: none;">
         <div class="container">
           <h1 class="display-4">Coin Flip</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" hidden>
+      <div class="jumbotron jumbotron-fluid" id="eenyMeenyPage" style="display: none;">
         <div class="container">
           <h1 class="display-4">Eeny, Meeny...</h1>
-          <p class="lead eenyMeeny" style="height: 50px"></p>
+          <p class="lead eenyMeenyText" style="height: 50px"></p>
           <div class="input-group mb-3">
             <div class="input-group-prepend">
               <button class="btn btn-primary addNameBtn" type="button" id="button-addon1">Add</button>
@@ -47,8 +85,8 @@
             <input type="text" class="form-control name-input" id="name-input" placeholder="Name" aria-label="Name input with an add button" aria-describedby="button-addon1">
           </div>
           <ul class="names-list text-primary" style="list-style-type:none; font-size: 24px; font-weight: bold;"></ul>
-          <button type="button" class="btn btn-lg btn-primary randomName" style="width: 170px;">Eenie, Meenie</button>
-          <button type="button" class="btn btn-lg btn-primary clearNames" style="width: 170px;">Clear Names</button>
+          <button type="button" class="btn btn-lg btn-primary randomNameBtn" style="width: 170px;">Eeny, Meeny</button>
+          <button type="button" class="btn btn-lg btn-primary clearNamesBtn" style="width: 170px;">Clear Names</button>
         </div>
       </div>
     <!-- Optional JavaScript -->
@@ -56,6 +94,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="dice.js"></script>
     <script src="eenyMeeny.js"></script>
+    <script src="script.js"></script>
   </body>
 </html>
