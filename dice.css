@@ -5,7 +5,7 @@
     border-radius: 15px;
     height: 220px;
     width: 220px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .dot{
@@ -17,43 +17,43 @@
     width: 44px;
 }
 
-#dot1{
+.dot1{
     position: absolute;
     left: 75px;
     top: 75px;
 }
 
-#dot2{
+.dot2{
     position: absolute;
     left: 25px;
     top: 25px;
 }
 
-#dot3{
+.dot3{
     position: absolute;
     left: 125px;
     top: 125px;
 }
 
-#dot4{
+.dot4{
     position: absolute;
     left: 125px;
     top: 25px;
 }
 
-#dot5{
+.dot5{
     position: absolute;
     left: 25px;
     top: 125px;
 }
 
-#dot6{
+.dot6{
     position: absolute;
     left: 25px;
     top: 75px;
 }
 
-#dot7{
+.dot7{
     position: absolute;
     left: 125px;
     top: 75px;

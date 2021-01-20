@@ -23,47 +23,60 @@
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" id="dicePage">
+      <div class="jumbotron jumbotron-fluid" id="dicePage" style="display: none;">
         <div class="container">
           <h1 class="display-4">Dice Roll</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          <div class="container">
-            <div class="dice" id="dice1" style="display: none;">
-              <div class="dot" id="dot1"></div>
+          <button type="button" class="btn btn-lg btn-danger btn-block addDiceBtn mb-1" style="width: 170px">Add</button>
+          <button type="button" class="btn btn-lg btn-danger btn-block rollBtn mb-1" style="width: 170px">Roll</button>
+          <button type="button" class="btn btn-lg btn-danger btn-block clearDiceBtn mb-1" style="width: 170px">Clear</button>
+          <div class="container dice-group">
+            <div class="dice" id="dice1">
+              <div class="dot dot1" id="dot11" style="display: none;"></div>
+              <div class="dot dot2" id="dot21" style="display: none;"></div>
+              <div class="dot dot3" id="dot31" style="display: none;"></div>
+              <div class="dot dot4" id="dot41" style="display: none;"></div>
+              <div class="dot dot5" id="dot51" style="display: none;"></div>
+              <div class="dot dot6" id="dot61" style="display: none;"></div>
+              <div class="dot dot7" id="dot71" style="display: none;"></div>
             </div>
             <div class="dice" id="dice2" style="display: none;">
-              <div class="dot" id="dot2"></div>
-              <div class="dot" id="dot3"></div>
+              <div class="dot dot1" id="dot12" style="display: none;"></div>
+              <div class="dot dot2" id="dot22" style="display: none;"></div>
+              <div class="dot dot3" id="dot32" style="display: none;"></div>
+              <div class="dot dot4" id="dot42" style="display: none;"></div>
+              <div class="dot dot5" id="dot52" style="display: none;"></div>
+              <div class="dot dot6" id="dot62" style="display: none;"></div>
+              <div class="dot dot7" id="dot72" style="display: none;"></div>
             </div>
             <div class="dice" id="dice3" style="display: none;">
-              <div class="dot" id="dot1"></div>
-              <div class="dot" id="dot2"></div>
-              <div class="dot" id="dot3"></div>
+              <div class="dot dot1" id="dot13" style="display: none;"></div>
+              <div class="dot dot2" id="dot23" style="display: none;"></div>
+              <div class="dot dot3" id="dot33" style="display: none;"></div>
+              <div class="dot dot4" id="dot43" style="display: none;"></div>
+              <div class="dot dot5" id="dot53" style="display: none;"></div>
+              <div class="dot dot6" id="dot63" style="display: none;"></div>
+              <div class="dot dot7" id="dot73" style="display: none;"></div>
             </div>
             <div class="dice" id="dice4" style="display: none;">
-              <div class="dot" id="dot2"></div>
-              <div class="dot" id="dot3"></div>
-              <div class="dot" id="dot4"></div>
-              <div class="dot" id="dot5"></div>
+              <div class="dot dot1" id="dot14" style="display: none;"></div>
+              <div class="dot dot2" id="dot24" style="display: none;"></div>
+              <div class="dot dot3" id="dot34" style="display: none;"></div>
+              <div class="dot dot4" id="dot44" style="display: none;"></div>
+              <div class="dot dot5" id="dot54" style="display: none;"></div>
+              <div class="dot dot6" id="dot64" style="display: none;"></div>
+              <div class="dot dot7" id="dot74" style="display: none;"></div>
             </div>
             <div class="dice" id="dice5" style="display: none;">
-              <div class="dot" id="dot1"></div>
-              <div class="dot" id="dot2"></div>
-              <div class="dot" id="dot3"></div>
-              <div class="dot" id="dot4"></div>
-              <div class="dot" id="dot5"></div>
-            </div>
-            <div class="dice" id="dice6" style="display: none;">
-              <div class="dot" id="dot2"></div>
-              <div class="dot" id="dot3"></div>
-              <div class="dot" id="dot4"></div>
-              <div class="dot" id="dot5"></div>
-              <div class="dot" id="dot6"></div>
-              <div class="dot" id="dot7"></div>
+              <div class="dot dot1" id="dot15" style="display: none;"></div>
+              <div class="dot dot2" id="dot25" style="display: none;"></div>
+              <div class="dot dot3" id="dot35" style="display: none;"></div>
+              <div class="dot dot4" id="dot45" style="display: none;"></div>
+              <div class="dot dot5" id="dot55" style="display: none;"></div>
+              <div class="dot dot6" id="dot65" style="display: none;"></div>
+              <div class="dot dot7" id="dot75" style="display: none;"></div>
             </div>
           </div>
-          <button type="button" class="btn btn-lg btn-danger rollBtn" style="width: 170px;">Roll</button>
-          <button type="button" class="btn btn-lg btn-danger addDiceBtn" style="width: 170px;">Add</button>
         </div>
       </div>
 
