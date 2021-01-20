@@ -1,48 +1,60 @@
 $(document).ready(function() {
+    // Randomly choose die one number
     var dice = 1;
-    // Randomly choose a dice to show
     getDice(dice);
 
-    // Roll button on click randomly choose dice multiple times
+    // Roll button on click
     $(".rollBtn").on("click",function(){
+        // Declare variables
+        let m=0;
+        let diceOne=0, diceTwo=0, diceThree=0, diceFour=0, diceFive=0;
+        let product=0, sum=0;
+
         // Disable all buttons
         $(".rollBtn").prop("disabled", true);
         $(".addDiceBtn").prop("disabled", true);
         $(".clearDiceBtn").prop("disabled", true);
-        let m=0;
+
+        // Interval function rollDice flashes dice values on screen
         var rollDice = setInterval(function() {
             switch(dice){
                 case 1:
-                    getDice(1);
+                    diceOne = getDice(1);
                     break;
                 case 2:
-                    getDice(1)
-                    getDice(2)
+                    diceOne = getDice(1)
+                    diceTwo = getDice(2)
                     break;
                 case 3:
-                    getDice(1);
-                    getDice(2);
-                    getDice(3);
+                    diceOne = getDice(1);
+                    diceTwo = getDice(2);
+                    diceThree = getDice(3);
                     break;
                 case 4:
-                    getDice(1);
-                    getDice(2);
-                    getDice(3);
-                    getDice(4);
+                    diceOne = getDice(1);
+                    diceTwo = getDice(2);
+                    diceThree = getDice(3);
+                    diceFour = getDice(4);
                     break;
                 case 5:
-                    getDice(1);
-                    getDice(2);
-                    getDice(3);
-                    getDice(4);
-                    getDice(5);
+                    diceOne = getDice(1);
+                    diceTwo = getDice(2);
+                    diceThree = getDice(3);
+                    diceFour = getDice(4);
+                    diceFive = getDice(5);
                     break;
                 default:
                     alert("Oops!")
             }
-            m++;            
+            m++; 
+
             if(m >= 15){
-                clearInterval(rollDice);
+                sum = diceOne + diceTwo + diceThree + diceFour + diceFive;
+                product = diceOne * diceTwo * diceThree * diceFour * diceFive;
+                $(".diceSum").text("Sum: " + sum);
+                $(".diceProduct").text("Product: " + product);
+                console.log(sum);
+                console.log(product);
                 // Enable all buttons
                 $(".addDiceBtn").prop("disabled", false);
                 $(".rollBtn").prop("disabled", false);
@@ -51,10 +63,13 @@ $(document).ready(function() {
                     // Disable Add Dice Button if there are five dice
                     $(".addDiceBtn").prop("disabled", true);
                 }
+                // Exit rollDice interval function
+                clearInterval(rollDice);
             } 
         },200);
     });
 
+    // Add button on click
     $(".addDiceBtn").on("click",function(){
         // Show next die in sequence
         dice++;
@@ -65,17 +80,21 @@ $(document).ready(function() {
             $(".addDiceBtn").prop("disabled", true);}
     });
 
+    // Clear button on click
     $(".clearDiceBtn").on("click",function(){
-        dice = 1;
         // Hide dice 2 through 5
         $("#dice2").hide();
         $("#dice3").hide();
         $("#dice4").hide();
         $("#dice5").hide();
+
         // Enable all buttons
         $(".rollBtn").prop("disabled", false);
         $(".addDiceBtn").prop("disabled", false);
         $(".clearDiceBtn").prop("disabled", false);
+
+        // Randomly choose die one number
+        dice = 1;
         getDice(dice);
     });
 
@@ -141,5 +160,6 @@ $(document).ready(function() {
             default:
                 alert("Something went wrong!")
         }
+        return randomDice;
     }
 });
