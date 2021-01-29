@@ -14,6 +14,10 @@ $(document).ready(function() {
         // Disable all buttons
         $(".rollBtn").prop("disabled", true);
         $(".addDiceBtn").prop("disabled", true);
+        $(".addRedDiceBtn").prop("disabled", true);
+        $(".addYellDiceBtn").prop("disabled", true);
+        $(".addGreenDiceBtn").prop("disabled", true);
+        $(".addBlueDiceBtn").prop("disabled", true);
         $(".clearDiceBtn").prop("disabled", true);
 
         // Interval function rollDice flashes dice values on screen
@@ -74,11 +78,19 @@ $(document).ready(function() {
                 console.log(product);
                 // Enable all buttons
                 $(".addDiceBtn").prop("disabled", false);
+                $(".addRedDiceBtn").prop("disabled", false);
+                $(".addYellDiceBtn").prop("disabled", false);
+                $(".addGreenDiceBtn").prop("disabled", false);
+                $(".addBlueDiceBtn").prop("disabled", false);
                 $(".rollBtn").prop("disabled", false);
                 $(".clearDiceBtn").prop("disabled", false);
                 if(dice >= 5){
                     // Disable Add Dice Button if there are five dice
                     $(".addDiceBtn").prop("disabled", true);
+                    $(".addRedDiceBtn").prop("disabled", true);
+                    $(".addYellDiceBtn").prop("disabled", true);
+                    $(".addGreenDiceBtn").prop("disabled", true);
+                    $(".addBlueDiceBtn").prop("disabled", true);
                 }
                 // Exit rollDice interval function
                 clearInterval(rollDice);
@@ -87,15 +99,20 @@ $(document).ready(function() {
     });
 
     // Add button on click
-    $(".addDiceBtn").on("click",function(){
+    function addDice(){
         // Show next die in sequence
         dice++;
         $("#dice" + dice).show();
         getDice(dice);
         if(dice >= 5){
             // Disable Add Dice Button if there are five dice
-            $(".addDiceBtn").prop("disabled", true);}
-    });
+            $(".addDiceBtn").prop("disabled", true);
+            $(".addRedDiceBtn").prop("disabled", true);
+            $(".addYellDiceBtn").prop("disabled", true);
+            $(".addGreenDiceBtn").prop("disabled", true);
+            $(".addBlueDiceBtn").prop("disabled", true);
+        }
+    }
 
     // Clear button on click
     $(".clearDiceBtn").on("click",function(){
@@ -108,6 +125,10 @@ $(document).ready(function() {
         // Enable all buttons
         $(".rollBtn").prop("disabled", false);
         $(".addDiceBtn").prop("disabled", false);
+        $(".addRedDiceBtn").prop("disabled", false);
+        $(".addYellDiceBtn").prop("disabled", false);
+        $(".addGreenDiceBtn").prop("disabled", false);
+        $(".addBlueDiceBtn").prop("disabled", false);
         $(".clearDiceBtn").prop("disabled", false);
 
         // Randomly choose die one number
@@ -179,4 +200,51 @@ $(document).ready(function() {
         }
         return randomDice;
     }
+    $(".addDiceBtn").click(function(){
+        addDice();
+    })
+    $(".addRedDiceBtn").click(function(){
+        addDice();
+        $("#dice" + dice).addClass("redDice");
+        $("#dot1" + dice).addClass("whiteDot");
+        $("#dot2" + dice).addClass("whiteDot");
+        $("#dot3" + dice).addClass("whiteDot");
+        $("#dot4" + dice).addClass("whiteDot");
+        $("#dot5" + dice).addClass("whiteDot");
+        $("#dot6" + dice).addClass("whiteDot");
+        $("#dot7" + dice).addClass("whiteDot");
+    })
+    $(".addYellDiceBtn").click(function(){
+        addDice();
+        $("#dice" + dice).addClass("yellDice");
+        $("#dot1" + dice).addClass("whiteDot");
+        $("#dot2" + dice).addClass("whiteDot");
+        $("#dot3" + dice).addClass("whiteDot");
+        $("#dot4" + dice).addClass("whiteDot");
+        $("#dot5" + dice).addClass("whiteDot");
+        $("#dot6" + dice).addClass("whiteDot");
+        $("#dot7" + dice).addClass("whiteDot");
+    })
+    $(".addGreenDiceBtn").click(function(){
+        addDice();
+        $("#dice" + dice).addClass("greenDice");
+        $("#dot1" + dice).addClass("whiteDot");
+        $("#dot2" + dice).addClass("whiteDot");
+        $("#dot3" + dice).addClass("whiteDot");
+        $("#dot4" + dice).addClass("whiteDot");
+        $("#dot5" + dice).addClass("whiteDot");
+        $("#dot6" + dice).addClass("whiteDot");
+        $("#dot7" + dice).addClass("whiteDot");
+    })
+    $(".addBlueDiceBtn").click(function(){
+        addDice();
+        $("#dice" + dice).addClass("blueDice");
+        $("#dot1" + dice).addClass("whiteDot");
+        $("#dot2" + dice).addClass("whiteDot");
+        $("#dot3" + dice).addClass("whiteDot");
+        $("#dot4" + dice).addClass("whiteDot");
+        $("#dot5" + dice).addClass("whiteDot");
+        $("#dot6" + dice).addClass("whiteDot");
+        $("#dot7" + dice).addClass("whiteDot");
+    })
 });

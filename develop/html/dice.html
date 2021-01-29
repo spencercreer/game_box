@@ -34,7 +34,7 @@
     </nav>
       <!-- Dice Page Jumbotron -->
       <div class="jumbotron jumbotron-fluid" id="dicePage">
-        <div class="container">
+        <div class="container px-3">
           <h1 class="display-4">Dice Roll</h1>
           <p class="lead mb-2">Are you a high roller? This application uses Math.random to simulate rolling dice. You may roll up to five dice. The sum and product of your roll will be displayed.</p>
           <div style="height: 70px">
@@ -42,9 +42,15 @@
             <p class="diceProduct lead mb-2">Product:</p>
           </div>
           <!-- Buttons -->
-          <button type="button" class="btn btn-lg btn-danger btn-block addDiceBtn mb-1" style="width: 170px">Add</button>
-          <button type="button" class="btn btn-lg btn-danger btn-block rollBtn mb-1" style="width: 170px">Roll</button>
-          <button type="button" class="btn btn-lg btn-danger btn-block clearDiceBtn mb-1" style="width: 170px">Clear</button>
+          <div class="row px-3">
+            <button type="button" class="btn btn-lg btn-dark addDiceBtn mb-1 mr-auto" style="width: 19%">Add</button>
+            <button type="button" class="btn btn-lg btn-danger addRedDiceBtn mb-1 mx-auto" style="width: 19%">Add</button>
+            <button type="button" class="btn btn-lg btn-warning text-light addYellDiceBtn mb-1 mx-auto" style="width: 19%">Add</button>
+            <button type="button" class="btn btn-lg btn-success addGreenDiceBtn mb-1 mx-auto" style="width: 19%">Add</button>
+            <button type="button" class="btn btn-lg btn-primary addBlueDiceBtn mb-1 ml-auto" style="width: 19%">Add</button>
+          </div>
+          <button type="button" class="btn btn-lg btn-danger rollBtn btn-block">Roll</button>
+          <button type="button" class="btn btn-lg btn-danger clearDiceBtn mt-1 btn-block">Clear</button>
           <!-- Dice -->
           <div class="container dice-group">
             <!-- Dice One -->

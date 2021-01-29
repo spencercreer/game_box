@@ -8,6 +8,26 @@
     margin: 5px;
 }
 
+.redDice{
+    background-color: #DC3545;
+    border: 10px solid #DC3545;
+}
+
+.yellDice{
+    background-color: #FFC107;
+    border: 10px solid #FFC107;
+}
+
+.greenDice{
+    background-color: #28A745;
+    border: 10px solid #28A745;
+}
+
+.blueDice{
+    background-color: #007BFF;
+    border: 10px solid #007BFF;
+}
+
 .dot{
     display: inline-block;
     background-color: black;
@@ -15,6 +35,10 @@
     margin: 3px;
     height: 44px;
     width: 44px;
+}
+
+.whiteDot{
+    background-color: #f8f9fa;
 }
 
 .dot1{
