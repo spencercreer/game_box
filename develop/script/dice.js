@@ -8,6 +8,7 @@ $(document).ready(function() {
         // Declare variables
         let m=0;
         let diceOne=0, diceTwo=0, diceThree=0, diceFour=0, diceFive=0;
+        let diceOneProd=1, diceTwoProd=1, diceThreeProd=1, diceFourProd=1, diceFiveProd=1;
         let product=0, sum=0;
 
         // Disable all buttons
@@ -20,21 +21,31 @@ $(document).ready(function() {
             switch(dice){
                 case 1:
                     diceOne = getDice(1);
+                    diceOneProd = diceOne;
                     break;
                 case 2:
                     diceOne = getDice(1)
                     diceTwo = getDice(2)
+                    diceOneProd = diceOne;
+                    diceTwoProd = diceTwo;
                     break;
                 case 3:
                     diceOne = getDice(1);
                     diceTwo = getDice(2);
                     diceThree = getDice(3);
+                    diceOneProd = diceOne;
+                    diceTwoProd = diceTwo;
+                    diceThreeProd = diceThree;
                     break;
                 case 4:
                     diceOne = getDice(1);
                     diceTwo = getDice(2);
                     diceThree = getDice(3);
                     diceFour = getDice(4);
+                    diceOneProd = diceOne;
+                    diceTwoProd = diceTwo;
+                    diceThreeProd = diceThree;
+                    diceFourProd = diceFour;
                     break;
                 case 5:
                     diceOne = getDice(1);
@@ -42,6 +53,11 @@ $(document).ready(function() {
                     diceThree = getDice(3);
                     diceFour = getDice(4);
                     diceFive = getDice(5);
+                    diceOneProd = diceOne;
+                    diceTwoProd = diceTwo;
+                    diceThreeProd = diceThree;
+                    diceFourProd = diceFour;
+                    diceFiveProd = diceFive;
                     break;
                 default:
                     alert("Oops!")
@@ -49,8 +65,9 @@ $(document).ready(function() {
             m++; 
 
             if(m >= 15){
+                dice
                 sum = diceOne + diceTwo + diceThree + diceFour + diceFive;
-                product = diceOne * diceTwo * diceThree * diceFour * diceFive;
+                product = Math.imul(diceOneProd, diceTwoProd, diceThreeProd, diceFourProd, diceFiveProd);
                 $(".diceSum").text("Sum: " + sum);
                 $(".diceProduct").text("Product: " + product);
                 console.log(sum);
