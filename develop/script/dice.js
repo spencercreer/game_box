@@ -67,7 +67,7 @@ $(document).ready(function() {
             if(m >= 15){
                 dice
                 sum = diceOne + diceTwo + diceThree + diceFour + diceFive;
-                product = Math.imul(diceOneProd, diceTwoProd, diceThreeProd, diceFourProd, diceFiveProd);
+                product = diceOneProd * diceTwoProd * diceThreeProd * diceFourProd * diceFiveProd;
                 $(".diceSum").text("Sum: " + sum);
                 $(".diceProduct").text("Product: " + product);
                 console.log(sum);
