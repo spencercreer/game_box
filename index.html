@@ -8,8 +8,8 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="dice.css">
-    <link rel="stylesheet" href="coin.css">
+    <link rel="stylesheet" href="./develop/style/dice.css">
+    <link rel="stylesheet" href="./develop/style/coin.css">
   </head>
   <body>
 
@@ -28,7 +28,7 @@
     </nav>
     <div class="jumbotron jumbotron-fluid" id="homePage">
         <div class="container">
-          <h1 class="display-4">Math.Random()</h1>
+          <h1 class="display-4">Math.random</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
           <div class="btn-group-vertical">
               <button class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</button>
@@ -41,9 +41,11 @@
       <div class="jumbotron jumbotron-fluid" id="dicePage" style="display: none;">
         <div class="container">
           <h1 class="display-4">Dice Roll</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          <p class="diceSum"></p>
-          <p class="diceProduct"></p>
+          <p class="lead mb-2">Are you a high roller? This application uses Math.random to simulate rolling dice. You may roll up to five dice. The sum and product of your roll will be displayed on the screen.</p>
+          <div style="height: 70px">
+            <p class="diceSum lead mb-0">Sum:</p>
+            <p class="diceProduct lead mb-2">Product:</p>
+          </div>
           <button type="button" class="btn btn-lg btn-danger btn-block addDiceBtn mb-1" style="width: 170px">Add</button>
           <button type="button" class="btn btn-lg btn-danger btn-block rollBtn mb-1" style="width: 170px">Roll</button>
           <button type="button" class="btn btn-lg btn-danger btn-block clearDiceBtn mb-1" style="width: 170px">Clear</button>
@@ -97,12 +99,15 @@
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" id="coinPage" style="display: none;">
+      <div class="jumbotron jumbotron-fluid" id="coinPage">
         <div class="container">
           <h1 class="display-4">Coin Flip</h1>
           <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          <div class="coin"></div>
-          <button type="button" class="btn btn-lg btn-warning text-light my-3" style="width: 170px">Flip</button>
+          <div class="row">
+            <div class="coin-left"></div>
+            <div class="coin-right"></div>
+          </div>
+          <button type="button" class="btn btn-lg btn-warning text-light my-3 coinFlipBtn" style="width: 170px">Flip</button>
         </div>
       </div>
 
@@ -126,9 +131,9 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="dice.js"></script>
-    <script src="coin.js"></script>
-    <script src="eenyMeeny.js"></script>
-    <script src="script.js"></script>
+    <script src="./develop/script/dice.js"></script>
+    <script src="./develop/script/coin.js"></script>
+    <script src="./develop/script/eenyMeeny.js"></script>
+    <script src="./develop/script/script.js"></script>
   </body>
 </html>
