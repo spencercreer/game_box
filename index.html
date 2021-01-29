@@ -8,132 +8,54 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Style sheets -->
     <link rel="stylesheet" href="./develop/style/dice.css">
     <link rel="stylesheet" href="./develop/style/coin.css">
   </head>
   <body>
-
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <p class="navbar-brand homeLink my-2">Math.random</p>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <!-- Home nav item -->
+      <a class="navbar-brand" href="./index.html">Math.random</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <p class="nav-link diceLink my-2">Dice Roll</p>
-          <p class="nav-link coinLink my-2">Coin Flip</p>
-          <p class="nav-link eenyLink my-2">Eeny Meeny</p>
-        </div>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Dice nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/dice.html">Dice Roll</a>
+          </li>
+          <!-- Coin nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/coin.html">Coin Flip</a>
+          </li>
+          <!-- Eeny nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/eenyMeeny.html">Eeny Meeny</a>
+          </li>
+        </ul>
       </div>
     </nav>
+
+    <!-- Jumbotron -->
     <div class="jumbotron jumbotron-fluid" id="homePage">
         <div class="container">
           <h1 class="display-4">Math.random</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+          <p class="lead">Math.random uses the JavaScript math functions to simulate random events like rolling dice or flipping a coin. The Eeny Meeny application randomly picks from a list of entered names.</p>
+          <!-- Buttons -->
           <div class="btn-group-vertical">
-              <button class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</button>
-              <button class="btn btn-lg btn-success btn-group coinBtn">Coin Flip</button>
-              <button class="btn btn-lg btn-success btn-group eenyMeenyBtn">Eeny, Meeny</button>
+              <a href="./develop/html/dice.html" class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</a>
+              <a href="./develop/html/coin.html" class="btn btn-lg btn-success btn-group coinBtn">Coin Flip</a>
+              <a href="./develop/html/eenyMeeny.html" class="btn btn-lg btn-success btn-group eenyMeenyBtn">Eeny, Meeny</a>
             </div>
         </div>
       </div>
 
-      <div class="jumbotron jumbotron-fluid" id="dicePage" style="display: none;">
-        <div class="container">
-          <h1 class="display-4">Dice Roll</h1>
-          <p class="lead mb-2">Are you a high roller? This application uses Math.random to simulate rolling dice. You may roll up to five dice. The sum and product of your roll will be displayed on the screen.</p>
-          <div style="height: 70px">
-            <p class="diceSum lead mb-0">Sum:</p>
-            <p class="diceProduct lead mb-2">Product:</p>
-          </div>
-          <button type="button" class="btn btn-lg btn-danger btn-block addDiceBtn mb-1" style="width: 170px">Add</button>
-          <button type="button" class="btn btn-lg btn-danger btn-block rollBtn mb-1" style="width: 170px">Roll</button>
-          <button type="button" class="btn btn-lg btn-danger btn-block clearDiceBtn mb-1" style="width: 170px">Clear</button>
-          <div class="container dice-group">
-            <div class="dice" id="dice1">
-              <div class="dot dot1" id="dot11" style="display: none;"></div>
-              <div class="dot dot2" id="dot21" style="display: none;"></div>
-              <div class="dot dot3" id="dot31" style="display: none;"></div>
-              <div class="dot dot4" id="dot41" style="display: none;"></div>
-              <div class="dot dot5" id="dot51" style="display: none;"></div>
-              <div class="dot dot6" id="dot61" style="display: none;"></div>
-              <div class="dot dot7" id="dot71" style="display: none;"></div>
-            </div>
-            <div class="dice" id="dice2" style="display: none;">
-              <div class="dot dot1" id="dot12" style="display: none;"></div>
-              <div class="dot dot2" id="dot22" style="display: none;"></div>
-              <div class="dot dot3" id="dot32" style="display: none;"></div>
-              <div class="dot dot4" id="dot42" style="display: none;"></div>
-              <div class="dot dot5" id="dot52" style="display: none;"></div>
-              <div class="dot dot6" id="dot62" style="display: none;"></div>
-              <div class="dot dot7" id="dot72" style="display: none;"></div>
-            </div>
-            <div class="dice" id="dice3" style="display: none;">
-              <div class="dot dot1" id="dot13" style="display: none;"></div>
-              <div class="dot dot2" id="dot23" style="display: none;"></div>
-              <div class="dot dot3" id="dot33" style="display: none;"></div>
-              <div class="dot dot4" id="dot43" style="display: none;"></div>
-              <div class="dot dot5" id="dot53" style="display: none;"></div>
-              <div class="dot dot6" id="dot63" style="display: none;"></div>
-              <div class="dot dot7" id="dot73" style="display: none;"></div>
-            </div>
-            <div class="dice" id="dice4" style="display: none;">
-              <div class="dot dot1" id="dot14" style="display: none;"></div>
-              <div class="dot dot2" id="dot24" style="display: none;"></div>
-              <div class="dot dot3" id="dot34" style="display: none;"></div>
-              <div class="dot dot4" id="dot44" style="display: none;"></div>
-              <div class="dot dot5" id="dot54" style="display: none;"></div>
-              <div class="dot dot6" id="dot64" style="display: none;"></div>
-              <div class="dot dot7" id="dot74" style="display: none;"></div>
-            </div>
-            <div class="dice" id="dice5" style="display: none;">
-              <div class="dot dot1" id="dot15" style="display: none;"></div>
-              <div class="dot dot2" id="dot25" style="display: none;"></div>
-              <div class="dot dot3" id="dot35" style="display: none;"></div>
-              <div class="dot dot4" id="dot45" style="display: none;"></div>
-              <div class="dot dot5" id="dot55" style="display: none;"></div>
-              <div class="dot dot6" id="dot65" style="display: none;"></div>
-              <div class="dot dot7" id="dot75" style="display: none;"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="jumbotron jumbotron-fluid" id="coinPage">
-        <div class="container">
-          <h1 class="display-4">Coin Flip</h1>
-          <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
-          <div class="row">
-            <div class="coin-left"></div>
-            <div class="coin-right"></div>
-          </div>
-          <button type="button" class="btn btn-lg btn-warning text-light my-3 coinFlipBtn" style="width: 170px">Flip</button>
-        </div>
-      </div>
-
-      <div class="jumbotron jumbotron-fluid" id="eenyMeenyPage" style="display: none;">
-        <div class="container">
-          <h1 class="display-4">Eeny, Meeny...</h1>
-          <p class="lead eenyMeenyText" style="height: 50px"></p>
-          <div class="input-group mb-3">
-            <div class="input-group-prepend">
-              <button class="btn btn-primary addNameBtn" type="button" id="button-addon1">Add</button>
-            </div>
-            <input type="text" class="form-control name-input" id="name-input" placeholder="Name" aria-label="Name input with an add button" aria-describedby="button-addon1">
-          </div>
-          <ul class="names-list text-primary" style="list-style-type:none; font-size: 24px; font-weight: bold;"></ul>
-          <button type="button" class="btn btn-lg btn-primary randomNameBtn" style="width: 170px;">Eeny, Meeny</button>
-          <button type="button" class="btn btn-lg btn-primary clearNamesBtn" style="width: 170px;">Clear Names</button>
-        </div>
-      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="./develop/script/dice.js"></script>
-    <script src="./develop/script/coin.js"></script>
-    <script src="./develop/script/eenyMeeny.js"></script>
-    <script src="./develop/script/script.js"></script>
   </body>
 </html>

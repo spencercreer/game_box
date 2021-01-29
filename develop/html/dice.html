@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- Style sheets -->
+    <link rel="stylesheet" href="../style/dice.css">
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="../../index.html">Math.random</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="./dice.html">Dice Roll</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./coin.html">Coin Flip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./eenyMeeny.html">Eeny Meeny</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+      <!-- Dice Page Jumbotron -->
+      <div class="jumbotron jumbotron-fluid" id="dicePage">
+        <div class="container">
+          <h1 class="display-4">Dice Roll</h1>
+          <p class="lead mb-2">Are you a high roller? This application uses Math.random to simulate rolling dice. You may roll up to five dice. The sum and product of your roll will be displayed on the screen.</p>
+          <div style="height: 70px">
+            <p class="diceSum lead mb-0">Sum:</p>
+            <p class="diceProduct lead mb-2">Product:</p>
+          </div>
+          <!-- Buttons -->
+          <button type="button" class="btn btn-lg btn-danger btn-block addDiceBtn mb-1" style="width: 170px">Add</button>
+          <button type="button" class="btn btn-lg btn-danger btn-block rollBtn mb-1" style="width: 170px">Roll</button>
+          <button type="button" class="btn btn-lg btn-danger btn-block clearDiceBtn mb-1" style="width: 170px">Clear</button>
+          <!-- Dice -->
+          <div class="container dice-group">
+            <!-- Dice One -->
+            <div class="dice" id="dice1">
+              <div class="dot dot1" id="dot11" style="display: none;"></div>
+              <div class="dot dot2" id="dot21" style="display: none;"></div>
+              <div class="dot dot3" id="dot31" style="display: none;"></div>
+              <div class="dot dot4" id="dot41" style="display: none;"></div>
+              <div class="dot dot5" id="dot51" style="display: none;"></div>
+              <div class="dot dot6" id="dot61" style="display: none;"></div>
+              <div class="dot dot7" id="dot71" style="display: none;"></div>
+            </div>
+            <!-- Dice Two -->
+            <div class="dice" id="dice2" style="display: none;">
+              <div class="dot dot1" id="dot12" style="display: none;"></div>
+              <div class="dot dot2" id="dot22" style="display: none;"></div>
+              <div class="dot dot3" id="dot32" style="display: none;"></div>
+              <div class="dot dot4" id="dot42" style="display: none;"></div>
+              <div class="dot dot5" id="dot52" style="display: none;"></div>
+              <div class="dot dot6" id="dot62" style="display: none;"></div>
+              <div class="dot dot7" id="dot72" style="display: none;"></div>
+            </div>
+            <!-- Dice Three -->
+            <div class="dice" id="dice3" style="display: none;">
+              <div class="dot dot1" id="dot13" style="display: none;"></div>
+              <div class="dot dot2" id="dot23" style="display: none;"></div>
+              <div class="dot dot3" id="dot33" style="display: none;"></div>
+              <div class="dot dot4" id="dot43" style="display: none;"></div>
+              <div class="dot dot5" id="dot53" style="display: none;"></div>
+              <div class="dot dot6" id="dot63" style="display: none;"></div>
+              <div class="dot dot7" id="dot73" style="display: none;"></div>
+            </div>
+            <!-- Dice Four -->
+            <div class="dice" id="dice4" style="display: none;">
+              <div class="dot dot1" id="dot14" style="display: none;"></div>
+              <div class="dot dot2" id="dot24" style="display: none;"></div>
+              <div class="dot dot3" id="dot34" style="display: none;"></div>
+              <div class="dot dot4" id="dot44" style="display: none;"></div>
+              <div class="dot dot5" id="dot54" style="display: none;"></div>
+              <div class="dot dot6" id="dot64" style="display: none;"></div>
+              <div class="dot dot7" id="dot74" style="display: none;"></div>
+            </div>
+            <!-- Dice Five -->
+            <div class="dice" id="dice5" style="display: none;">
+              <div class="dot dot1" id="dot15" style="display: none;"></div>
+              <div class="dot dot2" id="dot25" style="display: none;"></div>
+              <div class="dot dot3" id="dot35" style="display: none;"></div>
+              <div class="dot dot4" id="dot45" style="display: none;"></div>
+              <div class="dot dot5" id="dot55" style="display: none;"></div>
+              <div class="dot dot6" id="dot65" style="display: none;"></div>
+              <div class="dot dot7" id="dot75" style="display: none;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="../script/dice.js"></script>
+  </body>
+</html>
