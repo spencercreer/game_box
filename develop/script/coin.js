@@ -1,13 +1,14 @@
 $(document).ready(function() {
-    var coin = $(".coin-right");
-    var wid = 100;
+    var coin = $(".coin");
+    var j = 0
     $(".coinFlipBtn").on("click", function(){
         coinFlip = setInterval(function frame(){
-            if(wid <= 0){
+            coin.addClass("coinSpin");
+            j++;
+            if(j>5){
+                coin.removeClass("coinSpin")
                 clearInterval(coinFlip)
             }
-            wid--;
-            coin.width(wid);
-        },10);
+        },1000);
     })
 })

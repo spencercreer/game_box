@@ -4,7 +4,7 @@ $(document).ready(function() {
     var k = 0; //textColors increment
     var n = 0; //name id increment
     var textColors = ["text-primary", "text-danger", "text-warning", "text-success"];
-    var eenyMeeny = ['Eeny,', ' meeny,', ' miny,', ' moe,', ' Catch a', ' tiger', ' by the', ' toe.', ' If he', ' hollers,', ' let him', ' go,', ' Eeny,', ' meeny,', ' miny,', ' moe.']
+    var eenyMeeny = ['Eeny,', ' meeny,', ' miny,', ' moe.', ' Catch a', ' tiger', ' by the', ' toe.', ' If he', ' hollers,', ' let him', ' go.', ' Eeny,', ' meeny,', ' miny,', ' moe.']
     
     // Shuffle textColors array
     for (let i = textColors.length - 1; i > 0; i--) {
@@ -58,7 +58,7 @@ $(document).ready(function() {
                     $(".addNameBtn").prop("disabled", false);
                     $(".clearNamesBtn").prop("disabled", false);
                 }
-            }, 400);     
+            }, 300);     
         }
     });
 

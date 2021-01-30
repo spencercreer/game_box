@@ -63,6 +63,20 @@ $(document).ready(function() {
                     diceFourProd = diceFour;
                     diceFiveProd = diceFive;
                     break;
+                case 6:
+                    diceOne = getDice(1);
+                    diceTwo = getDice(2);
+                    diceThree = getDice(3);
+                    diceFour = getDice(4);
+                    diceFive = getDice(5);
+                    diceSix = getDice(6);
+                    diceOneProd = diceOne;
+                    diceTwoProd = diceTwo;
+                    diceThreeProd = diceThree;
+                    diceFourProd = diceFour;
+                    diceFiveProd = diceFive;
+                    diceSixProd = diceSix;
+                    break;
                 default:
                     alert("Oops!")
             }
@@ -70,8 +84,8 @@ $(document).ready(function() {
 
             if(m >= 15){
                 dice
-                sum = diceOne + diceTwo + diceThree + diceFour + diceFive;
-                product = diceOneProd * diceTwoProd * diceThreeProd * diceFourProd * diceFiveProd;
+                sum = diceOne + diceTwo + diceThree + diceFour + diceFive + diceSix;
+                product = diceOneProd * diceTwoProd * diceThreeProd * diceFourProd * diceFiveProd * diceSixProd;
                 $(".diceSum").text("Sum: " + sum);
                 $(".diceProduct").text("Product: " + product);
                 console.log(sum);
@@ -84,8 +98,8 @@ $(document).ready(function() {
                 $(".addBlueDiceBtn").prop("disabled", false);
                 $(".rollBtn").prop("disabled", false);
                 $(".clearDiceBtn").prop("disabled", false);
-                if(dice >= 5){
-                    // Disable Add Dice Button if there are five dice
+                if(dice >= 6){
+                    // Disable Add Dice Button if there are six dice
                     $(".addDiceBtn").prop("disabled", true);
                     $(".addRedDiceBtn").prop("disabled", true);
                     $(".addYellDiceBtn").prop("disabled", true);
@@ -104,8 +118,8 @@ $(document).ready(function() {
         dice++;
         $("#dice" + dice).show();
         getDice(dice);
-        if(dice >= 5){
-            // Disable Add Dice Button if there are five dice
+        if(dice >= 6){
+            // Disable Add Dice Button if there are six dice
             $(".addDiceBtn").prop("disabled", true);
             $(".addRedDiceBtn").prop("disabled", true);
             $(".addYellDiceBtn").prop("disabled", true);
@@ -116,11 +130,23 @@ $(document).ready(function() {
 
     // Clear button on click
     $(".clearDiceBtn").on("click",function(){
-        // Hide dice 2 through 5
+        // Hide dice 2 through 6
         $("#dice2").hide();
         $("#dice3").hide();
         $("#dice4").hide();
         $("#dice5").hide();
+        $("#dice6").hide();
+
+        for(let i = 1; i < 7; i++){
+            $("#dice" + i).removeClass("redDice yellDice greenDice blueDice");
+            $("#dot1" + i).removeClass("whiteDot");
+            $("#dot2" + i).removeClass("whiteDot");
+            $("#dot3" + i).removeClass("whiteDot");
+            $("#dot4" + i).removeClass("whiteDot");
+            $("#dot5" + i).removeClass("whiteDot");
+            $("#dot6" + i).removeClass("whiteDot");
+            $("#dot7" + i).removeClass("whiteDot");
+        }
 
         // Enable all buttons
         $(".rollBtn").prop("disabled", false);

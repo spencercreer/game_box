@@ -1,18 +1,23 @@
-.coin-left{
+.coin{
     position: relative;
     display: inline-block;
     /* left: 50%; */
     background-color: gray;
-    width: 100px;
+    width: 200px;
     height: 200px;
-    border-radius: 100px 0px 0px 100px;
+    border-radius: 100px;
 }
 
-.coin-right{
-    position: relative;
-    display: inline-block;
-    background-color: gray;
-    width: 100px;
-    height: 200px;
-    border-radius: 0px 100px 100px 0px;
+.coinSpin{
+    animation: coinFlip 5s infinite;
 }
+
+@keyframes coinFlip {
+    from {
+      transform: rotateY(0deg);
+    } to {
+      transform: rotateY(720deg);
+    }
+}
+
+
