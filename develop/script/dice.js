@@ -1,12 +1,12 @@
 $(document).ready(function() {
     // Randomly choose die one number
     var dice = 1;
+    var m = 0;
     getDice(dice);
 
     // Roll button on click
     $(".rollBtn").on("click",function(){
         // Declare variables
-        let m=0;
         let diceOne=0, diceTwo=0, diceThree=0, diceFour=0, diceFive=0;
         let diceOneProd=1, diceTwoProd=1, diceThreeProd=1, diceFourProd=1, diceFiveProd=1;
         let product=0, sum=0;
@@ -107,6 +107,7 @@ $(document).ready(function() {
                     $(".addBlueDiceBtn").prop("disabled", true);
                 }
                 // Exit rollDice interval function
+                m = 0;
                 clearInterval(rollDice);
             } 
         },200);
