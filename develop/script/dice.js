@@ -105,6 +105,7 @@ $(document).ready(function() {
                     $(".addBlueDiceBtn").prop("disabled", true);
                 }
                 // Exit rollDice interval function
+                m = 0;
                 clearInterval(rollDice);
             } 
         },200);
