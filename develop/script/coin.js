@@ -1,14 +1,18 @@
-$(document).ready(function() {
-    var coin = $(".coin");
-    var j = 0
-    $(".coinFlipBtn").on("click", function(){
-        coinFlip = setInterval(function frame(){
-            coin.addClass("coinSpin");
-            j++;
-            if(j>5){
-                coin.removeClass("coinSpin")
-                clearInterval(coinFlip)
-            }
-        },1000);
-    })
-})
+jQuery(document).ready(function($){
+
+    $('#coin').on('click', function(){
+      var flipResult = Math.random();
+      $('#coin').removeClass();
+      setTimeout(function(){
+        if(flipResult <= 0.5){
+          $('#coin').addClass('heads');
+          console.log('it is head');
+        }
+        else{
+          $('#coin').addClass('tails');
+          console.log('it is tails');
+        }
+      }, 100);
+    });
+  });
+  

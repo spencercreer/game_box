@@ -7,8 +7,8 @@ $(document).ready(function() {
     // Roll button on click
     $(".rollBtn").on("click",function(){
         // Declare variables
-        let diceOne=0, diceTwo=0, diceThree=0, diceFour=0, diceFive=0;
-        let diceOneProd=1, diceTwoProd=1, diceThreeProd=1, diceFourProd=1, diceFiveProd=1;
+        let diceOne=0, diceTwo=0, diceThree=0, diceFour=0, diceFive=0, diceSix=0;
+        let diceOneProd=1, diceTwoProd=1, diceThreeProd=1, diceFourProd=1, diceFiveProd=1, diceSixProd=1;
         let product=0, sum=0;
 
         // Disable all buttons
@@ -88,8 +88,6 @@ $(document).ready(function() {
                 product = diceOneProd * diceTwoProd * diceThreeProd * diceFourProd * diceFiveProd * diceSixProd;
                 $(".diceSum").text("Sum: " + sum);
                 $(".diceProduct").text("Product: " + product);
-                console.log(sum);
-                console.log(product);
                 // Enable all buttons
                 $(".addDiceBtn").prop("disabled", false);
                 $(".addRedDiceBtn").prop("disabled", false);
@@ -107,7 +105,6 @@ $(document).ready(function() {
                     $(".addBlueDiceBtn").prop("disabled", true);
                 }
                 // Exit rollDice interval function
-                m = 0;
                 clearInterval(rollDice);
             } 
         },200);
