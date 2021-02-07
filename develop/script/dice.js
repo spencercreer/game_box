@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    // Randomly choose die one number
+    // Randomly choose first die number
     var dice = 1;
     var m = 0;
     getDice(dice);
