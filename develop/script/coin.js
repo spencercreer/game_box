@@ -1,4 +1,4 @@
-jQuery(document).ready(function($){
+$(document).ready(function(){
   // Declare variables
   var flipResult, flipResultText;
   var totalHeads = 0;
