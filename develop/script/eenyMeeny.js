@@ -12,26 +12,41 @@ $(document).ready(function() {
         [textColors[i], textColors[j]] = [textColors[j], textColors[i]];
     }
 
-    $(".addNameBtn").on("click", function(){
-        // Get input value and push to names array
-        $(".names").css("opacity", "1");
+    function addName() {
         newName = $(".name-input").val();
-        $(".name-input").val("");
-        $(".name-input").focus();
-        names.push(newName);
-        // Append name to names-list element, assign color from textColors array
-        newNameEl = $("<li>");
-        newNameEl.text(newName);
-        newNameEl.addClass(textColors[k]);
-        newNameEl.addClass("names");
-        newNameEl.attr("id", "name" + n)
-        $(".names-list").append(newNameEl);
-        k++;
-        n++;
-        if(k > 3){k = 0;}
-        // Add names to local storage
-        localStorage.setItem("storedNames", JSON.stringify(names));
-    });
+        // If no name is entered message user to enter name
+        if(newName == ""){
+            confirm("Please enter a Name.");
+        } else {
+            // Get input value and push to names array
+            $(".names").css("opacity", "1");
+            $(".name-input").val("");
+            $(".name-input").focus();
+            names.push(newName);
+            // Append name to names-list element, assign color from textColors array
+            newNameEl = $("<li>");
+            newNameEl.text(newName);
+            newNameEl.addClass(textColors[k]);
+            newNameEl.addClass("names");
+            newNameEl.attr("id", "name" + n)
+            $(".names-list").append(newNameEl);
+            k++;
+            n++;
+            if(k > 3){k = 0;}
+            // Add names to local storage
+            localStorage.setItem("storedNames", JSON.stringify(names));
+        }
+    }
+    
+    // On click add name to list
+    $(".addNameBtn").on("click", addName);
+    
+    // Input keypress 'Enter' add name to list
+    $("#name-input").keypress(function(event){
+        if(event.which == 13) {
+            $(".addNameBtn").click();
+        }
+    })
 
     $(".randomNameBtn").on("click",function(){
         let m = 0;
