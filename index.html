@@ -1,77 +1,108 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <title>Math.random</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <!-- Font Awesome Style Sheet -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!-- Style sheets -->
-    <link rel="stylesheet" href="./develop/style/dice.css">
-    <link rel="stylesheet" href="./develop/style/coin.css">
-  </head>
-  <body>
-    <header>
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Home nav item -->
-        <a class="navbar-brand" href="./index.html">Math.random</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav">
-            <!-- Dice nav item -->
-            <li class="nav-item">
-              <a class="nav-link" href="./develop/html/dice.html">Dice Roll</a>
-            </li>
-            <!-- Coin nav item -->
-            <li class="nav-item">
-              <a class="nav-link" href="./develop/html/coin.html">Coin Flip</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./develop/html/card.html">Pick a Card</a>
-            </li>
-            <!-- Eeny nav item -->
-            <li class="nav-item">
-              <a class="nav-link" href="./develop/html/eenyMeeny.html">Eeny Meeny</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    <main>
-      <!-- Jumbotron -->
-      <div class="jumbotron jumbotron-fluid pt-5" id="homePage">
-          <div class="container">
-            <h1 class="display-4">Math.random</h1>
-            <p class="lead">Math.random uses the JavaScript math functions to simulate random events like rolling dice or flipping a coin.</p>
-            <!-- Buttons -->
-            <div class="btn-group-vertical">
-                <a href="./develop/html/dice.html" class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</a>
-                <a href="./develop/html/coin.html" class="btn btn-lg btn-success btn-group coinBtn">Coin Flip</a>
-                <a href="./develop/html/card.html" class="btn btn-lg btn-success btn-group coinBtn">Pick a Card</a>
-                <a href="./develop/html/eenyMeeny.html" class="btn btn-lg btn-success btn-group eenyMeenyBtn">Eeny, Meeny</a>
-              </div>
-          </div>
-        </div>
-    </main>
-    <footer class="footer mt-auto">
-      <div class="container py-3">
-        <span class="text-muted">Coded by Spencer Creer using jQuery and Bootstrap CSS framework 
-          <a class="text-dark link-text mx-2" href="https://www.linkedin.com/in/spencer-creer-023246109/" target="_blank" style="font-size: 25px;"><i class="fa fa-linkedin-square link-in"></i></a>
-          <a class="text-dark link-text mx-2 pt-3" href="https://github.com/spencercreer" target="_blank"><i class="fa fa-github link-git" style="font-size: 25px;"></i></a>
-        </span>
+<head>
+  <title>Math.random</title>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- Font Awesome Style Sheet -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Style sheets -->
+  <link rel="stylesheet" href="./develop/style/dice.css">
+  <link rel="stylesheet" href="./develop/style/coin.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="./develop/assets/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="./develop/assets/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./develop/assets/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./develop/assets/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./develop/assets/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./develop/assets/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./develop/assets/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./develop/assets/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./develop/assets/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="./develop/assets/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./develop/assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./develop/assets/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./develop/assets/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+</head>
+
+<body>
+  <header>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <!-- Home nav item -->
+      <a class="navbar-brand" href="./index.html">Math.random</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <!-- Dice nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/dice.html">Dice Roll</a>
+          </li>
+          <!-- Coin nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/coin.html">Coin Flip</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/card.html">Pick a Card</a>
+          </li>
+          <!-- Eeny nav item -->
+          <li class="nav-item">
+            <a class="nav-link" href="./develop/html/eenyMeeny.html">Eeny Meeny</a>
+          </li>
+        </ul>
       </div>
-    </footer>
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
+    </nav>
+  </header>
+  <main>
+    <!-- Jumbotron -->
+    <div class="jumbotron jumbotron-fluid pt-5" id="homePage">
+      <div class="container">
+        <h1 class="display-4">Math.random</h1>
+        <p class="lead">Math.random uses the JavaScript math functions to simulate random events like rolling dice or
+          flipping a coin.</p>
+        <!-- Buttons -->
+        <div class="btn-group-vertical">
+          <a href="./develop/html/dice.html" class="btn btn-lg btn-success btn-group diceBtn">Dice Roll</a>
+          <a href="./develop/html/coin.html" class="btn btn-lg btn-success btn-group coinBtn">Coin Flip</a>
+          <a href="./develop/html/card.html" class="btn btn-lg btn-success btn-group coinBtn">Pick a Card</a>
+          <a href="./develop/html/eenyMeeny.html" class="btn btn-lg btn-success btn-group eenyMeenyBtn">Eeny, Meeny</a>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer class="footer mt-auto">
+    <div class="container py-3">
+      <span class="text-muted">Coded by Spencer Creer using jQuery and Bootstrap CSS framework
+        <a class="text-dark link-text mx-2" href="https://www.linkedin.com/in/spencer-creer-023246109/" target="_blank"
+          style="font-size: 25px;"><i class="fa fa-linkedin-square link-in"></i></a>
+        <a class="text-dark link-text mx-2 pt-3" href="https://github.com/spencercreer" target="_blank"><i
+            class="fa fa-github link-git" style="font-size: 25px;"></i></a>
+      </span>
+    </div>
+  </footer>
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
