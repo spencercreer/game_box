@@ -1,18 +1,34 @@
 $(document).ready(function() {
-    var playingCards = ["ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "jack", "queen", "king"];
-    var suites = ["hearts", "diamonds", "clubs", "spades"];
+    var deck
+    var cardsRemaining
+
+    function callCardsApi() {
+        let queryURL = 'http://deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1'
+        $.ajax({
+            url: queryURL,
+            method: 'GET'
+        })
+        .then((res) => {
+            deck = res.deck_id
+            cardsRemaining = res.remaining
+            console.log(deck)
+        })
+        .fail(() => console.log('Error: 404 not found'))
+    }
+    callCardsApi()
 
     $(".pickBtn").on("click",function(){
-        console.log("hit");
-        var suiteNum = Math.floor(Math.random()*4);
-        var cardSuite = suites[suiteNum];
-        console.log(cardSuite);
-        var cardNum = Math.floor(Math.random()*14);
-        var card = playingCards[cardNum];
-        console.log(card);
-        // I believe this will need to change to cardFront to get a Flip
-        $(".cardBack").css("background-image", "url('../assets/" + card + "_" + cardSuite + ".JPG'")
-        // Add class for card flip based on flipResult
-        $("#playingCard").addClass(".cardFront");
+        console.log(deck)
+        let queryURL = `http://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`
+        $.ajax({
+            url: queryURL,
+            method: 'GET'
+        })
+        .then((res) => {
+            console.log(res)
+            $(".card").css("background-image", `url(${res.cards[0].image})`)
+        })
+        .fail(() => console.log('Error: 404 not found'))
     });
+
 });
