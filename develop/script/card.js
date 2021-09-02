@@ -12,7 +12,11 @@ $(document).ready(function () {
         })
             .then((res) => {
                 console.log(res)
-                $(".card").css("background-image", `url(${res.cards[0].image})`)
+                let playingCards = $("#playingCards")
+                let newCard = $('<img class="card">')
+                newCard.css("background-image", `url(${res.cards[0].image})`)
+                console.log(newCard)
+                playingCards.append(newCard)
             })
             .fail(() => console.log('Error: 404 not found'))
     });

@@ -13,7 +13,7 @@
   <!-- Font Awesome Style Sheet -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Style sheets -->
-  <!-- <link rel="stylesheet" href="../style/card.css"> -->
+  <link rel="styleSheet" href="../style/card.css" <!-- <link rel="stylesheet" href="../style/card.css"> -->
   <link rel="apple-touch-icon" sizes="57x57" href="../assets/apple-icon-57x57.png">
   <link rel="apple-touch-icon" sizes="60x60" href="../assets/apple-icon-60x60.png">
   <link rel="apple-touch-icon" sizes="72x72" href="../assets/apple-icon-72x72.png">
@@ -67,17 +67,20 @@
         <p class="lead">Any card! This application shuffles an array of playing cards and uses Math.random to randomly
           draw a card.</p>
         <div class="row">
-          <div id="playingCard" class="mx-auto">
-            <img class="card" style="height: 312px; width: 218px; border-radius: 10px; border-style: solid; border-width: 2px; border-color:black; background-image:
-                url('../assets/card_back2.png'); background-repeat: no-repeat; background-position:center;">
-          </div>
-        </div>
-        <div class="row">
           <button type="button" id="pickBtn" class="btn btn-lg btn-warning text-light my-3 mx-auto"
             style="width: 30%">Pick a Card</button>
         </div>
         <div class="row">
-          <button type="button" id="shuffleBtn" class="btn btn-lg btn-warning text-light my-3 mx-auto" style="width: 30%">Shuffle Deck</button>
+          <button type="button" id="shuffleBtn" class="btn btn-lg btn-warning text-light my-3 mx-auto"
+            style="width: 30%">Shuffle Deck</button>
+        </div>
+        <div id="cardDeck" class="row">
+          <div class="col-md-3">
+            <img class="deck"
+              style="height: 312px; width: 227px; border-radius: 14px; border-style: solid; border-width: 2px; border-color:#E2E1E1; background-image: url('../assets/card_back2.png'); background-repeat: no-repeat; background-position:center;">
+          </div>
+          <div id="playingCards" class="col-md-9">
+          </div>
         </div>
       </div>
     </div>
