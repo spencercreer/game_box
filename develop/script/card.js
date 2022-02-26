@@ -16,7 +16,6 @@ $(document).ready(function () {
                 let playingCards = $("#playingCards")
                 let newCard = $(`<img class="card" style="left: ${cardPosition}px">`)
                 newCard.css("background-image", `url(${res.cards[0].image})`)
-                console.log(newCard)
                 playingCards.append(newCard)
                 //fix cards going off page
                 cardPosition += 30
