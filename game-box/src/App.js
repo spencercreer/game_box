@@ -1,21 +1,13 @@
-import './App.css';
-import { Container, Navbar, Nav } from 'react-bootstrap'
+import Header from './components/Header';
+import ScoreCard from './components/ScoreCard';
 
-const { Link } = Nav 
+import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <Navbar bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="#home">Navbar</Navbar.Brand>
-          <Nav className="me-auto">
-            <Link href="#home">Home</Link>
-            <Link href="#features">Features</Link>
-            <Link href="#pricing">Pricing</Link>
-          </Nav>
-        </Container>
-      </Navbar>
+      <Header />
+      <ScoreCard />
     </div>
   );
 }
