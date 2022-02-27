@@ -1,20 +1,93 @@
 import { Container, Row, Col, InputGroup, Alert, FormControl, Button } from "react-bootstrap"
+import { useState, useEffect } from "react"
+
 
 const ScoreCard = () => {
+    const [newPlayer, setNewPlayer] = useState("")
+    const [playersData, setPlayersData] = useState([])
+
+    const handleInputPlayer = (event) => {
+        setNewPlayer(event.target.value)
+    }
+
+    const handleAddPlayer = () => {
+        const newPlayerData = { name: newPlayer, rounds: [], totalScore: null }
+        setPlayersData(data => [...data, newPlayerData])
+    }
+
     return (
         <>
             <Container>
                 <InputGroup className="mb-3">
                     <FormControl
-                        placeholder="Recipient's username"
-                        aria-label="Recipient's username"
-                        aria-describedby="basic-addon2"
+                        placeholder="Player's Name"
+                        onChange={handleInputPlayer}
                     />
-                    <Button variant="outline-secondary" id="button-addon2">
-                        Button
+                    <Button
+                        variant="outline-secondary"
+                        id="button-addon2"
+                        onClick={handleAddPlayer}
+                    >
+                        Add
                     </Button>
                 </InputGroup>
-                <Row>
+                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                    <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <div
+                            style={{ width: '45px', height: "30px", padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
+                            variant="secondary"
+                        ></div>
+                        <Alert
+                            style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
+                            variant="secondary"
+                        >
+                            1
+                        </Alert>
+                        <Alert
+                            style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
+                            variant="secondary"
+                        >
+                            2
+                        </Alert>
+                        <Alert
+                            style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
+                            variant="secondary"
+                        >
+                            Total
+                        </Alert>
+                    </div>
+                    {
+                        playersData.map(player => (
+                            <div style={{ display: 'flex', flexDirection: 'column' }}>
+                                <Alert
+                                    style={{ width: '45px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 10px 0px 0px' }}
+                                    variant="primary"
+                                >
+                                    SC
+                                </Alert>
+                                <FormControl
+                                    className="primary"
+                                    style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
+                                />
+                                <FormControl
+                                    className="primary"
+                                    style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
+                                />
+                                <FormControl
+                                    className="primary"
+                                    style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0' }}
+                                    disabled
+                                />
+                            </div>
+                        ))
+                    }
+
+                </div>
+                {/* <Row>
+                    <div
+                        style={{ width: '45px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 0px 0px 10px' }}
+                        variant="secondary"
+                    ></div>
                     <Alert
                         style={{ width: '45px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 10px 0px 0px' }}
                         variant="primary"
@@ -41,63 +114,81 @@ const ScoreCard = () => {
                     </Alert>
                 </Row>
                 <Row>
+                    <Alert
+                        style={{ width: '45px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 0px 0px 10px' }}
+                        variant="secondary"
+                    >
+                        1
+                    </Alert>
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                 </Row>
                 <Row>
+                    <Alert
+                        style={{ width: '45px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 0px 0px 10px' }}
+                        variant="secondary"
+                    >
+                        2
+                    </Alert>
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                     <FormControl
                         className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none' }}
-                    />
-                </Row>
-                 <Row>
-                    <FormControl
-                        className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
-                        disabled
-                    />
-                    <FormControl
-                        className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
-                        disabled
-                    />
-                    <FormControl
-                        className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
-                        disabled
-                    />
-                    <FormControl
-                        className="primary"
-                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
-                        disabled
+                        style={{ width: '45px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                     />
                 </Row>
+                <Row>
+                    <Alert
+                        style={{ width: '45px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 0px 0px 10px' }}
+                        variant="secondary"
+                    >
+                        Total
+                    </Alert>
+                    <FormControl
+                        className="primary"
+                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
+                        disabled
+                    />
+                    <FormControl
+                        className="primary"
+                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
+                        disabled
+                    />
+                    <FormControl
+                        className="primary"
+                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
+                        disabled
+                    />
+                    <FormControl
+                        className="primary"
+                        style={{ width: '45px', display: 'inline', borderRadius: '0' }}
+                        disabled
+                    />
+                </Row> */}
             </Container>
         </>
     )
