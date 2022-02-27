@@ -3,8 +3,19 @@ import { useState, useEffect } from "react"
 
 
 const ScoreCard = () => {
+    const [rounds, setRounds] = useState("")
     const [newPlayer, setNewPlayer] = useState("")
     const [playersData, setPlayersData] = useState([])
+
+    const handleInputRounds = (event) => {
+        let gameRounds = event.target.value
+        if (gameRounds > 20)
+            gameRounds = 20
+        else if (gameRounds <= 0)
+            gameRounds = ""
+            
+        setRounds(gameRounds)
+    }
 
     const handleInputPlayer = (event) => {
         setNewPlayer(event.target.value)
@@ -18,6 +29,23 @@ const ScoreCard = () => {
     return (
         <>
             <Container>
+                <InputGroup className="m-3">
+                    <FormControl
+                        type="number"
+                        min="0"
+                        max="20"
+                        value={rounds}
+                        placeholder="Game Rounds"
+                        onChange={handleInputRounds}
+                    />
+                     <Button
+                        variant="outline-secondary"
+                        id="button-addon2"
+                        // onClick={handleAddPlayer}
+                    >
+                        Create Scorecard
+                    </Button>
+                </InputGroup>
                 <InputGroup className="mb-3">
                     <FormControl
                         placeholder="Player's Name"
@@ -31,7 +59,7 @@ const ScoreCard = () => {
                         Add
                     </Button>
                 </InputGroup>
-                <div style={{display: 'flex', flexDirection: 'row', flexWrap: 'wrap'}}>
+                <div style={{ display: 'flex', flexDirection: 'row', flexWrap: 'wrap' }}>
                     <div style={{ display: 'flex', flexDirection: 'column' }}>
                         <div
                             style={{ width: '45px', height: "30px", padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
