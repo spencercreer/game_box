@@ -8,13 +8,20 @@ const ScoreCard = () => {
     const [playersData, setPlayersData] = useState([])
 
     const handleInputRounds = (event) => {
-        let gameRounds = event.target.value
+        let gameRounds = parseInt(event.target.value)
         if (gameRounds > 20)
             gameRounds = 20
-        else if (gameRounds <= 0)
+        else if (gameRounds <= 0 || isNaN(gameRounds))
             gameRounds = ""
-            
+
+        console.log(typeof gameRounds)
         setRounds(gameRounds)
+        console.log(rounds)
+    }
+
+    const handleSetRounds = (value) => {
+        console.log(value)
+
     }
 
     const handleInputPlayer = (event) => {
@@ -29,7 +36,7 @@ const ScoreCard = () => {
     return (
         <>
             <Container>
-                <InputGroup className="m-3">
+                <InputGroup className="my-3">
                     <FormControl
                         type="number"
                         min="0"
@@ -38,10 +45,10 @@ const ScoreCard = () => {
                         placeholder="Game Rounds"
                         onChange={handleInputRounds}
                     />
-                     <Button
+                    <Button
                         variant="outline-secondary"
                         id="button-addon2"
-                        // onClick={handleAddPlayer}
+                        onClick={(value) => handleSetRounds(value)}
                     >
                         Create Scorecard
                     </Button>
@@ -65,7 +72,18 @@ const ScoreCard = () => {
                             style={{ width: '45px', height: "30px", padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
                             variant="secondary"
                         ></div>
-                        <Alert
+                        {
+                            [...Array(rounds > 0 ? rounds : 0).keys()].map((round) => (
+                                <Alert
+                                    key={round}
+                                    style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
+                                    variant="secondary"
+                                >
+                                    {round + 1}
+                                </Alert>
+                            ))
+                        }
+                        {/* <Alert
                             style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
                             variant="secondary"
                         >
@@ -76,7 +94,7 @@ const ScoreCard = () => {
                             variant="secondary"
                         >
                             2
-                        </Alert>
+                        </Alert> */}
                         <Alert
                             style={{ width: '45px', height: '30px', padding: '5px', margin: '0px', borderRadius: '10px 0px 0px 10px' }}
                             variant="secondary"
