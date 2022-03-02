@@ -30,6 +30,19 @@ const ScoreCard = () => {
         setPlayersData(data => [...data, newPlayerData])
     }
 
+    const handleInputScore = (event, playerIndex, roundIndex) => {
+        const roundScore = event.target.value
+        console.log(playersData)
+        console.log(playersData[playerIndex]?.rounds[roundIndex])
+        console.log(event.target.value)
+        console.log(playerIndex)
+        console.log(roundIndex)
+    }
+
+    const getPlayerColor = (playerIndex) => {
+        return (playerIndex + 1) % 4 === 0 ? 'warning' : (playerIndex + 1) % 2 === 0 ? 'success' : (playerIndex) % 4 === 0 ? 'primary' : 'danger'
+    }
+
     return (
         <>
             <Container>
@@ -91,16 +104,19 @@ const ScoreCard = () => {
                         playersData.map((player, i) => (
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <Alert
+                                    key={i}
                                     style={{ width: '45px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 10px 0px 0px' }}
-                                    variant={ (i+1) % 4 === 0 ? 'warning' : (i+1) % 2 === 0 ? 'success' : (i) % 4 === 0 ? 'primary' : 'danger'  }
+                                    variant={getPlayerColor(i)}
                                 >
                                     {player.name.toUpperCase().substring(0, 3)}
                                 </Alert>
                                 {
-                                    player.rounds.map(round => (
+                                    player.rounds.map((round, i) => (
                                         <FormControl
+                                            type="number"
                                             className="primary"
                                             style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
+                                            onChange={(event, i) => handleInputScore(event, i, 1)}
                                         />
                                     ))
                                 }
