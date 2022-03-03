@@ -1,6 +1,12 @@
+import Die from "./Die"
+
 const Dice = () => {
   return (
-    <div>Dice</div>
+    <>
+      <Die />
+      <Die />
+      <Die />
+    </>
   )
 }
 

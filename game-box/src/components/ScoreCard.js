@@ -1,6 +1,5 @@
-import { Container, Row, Col, InputGroup, Alert, FormControl, Button } from "react-bootstrap"
-import { useState, useEffect } from "react"
-
+import { Container, InputGroup, Alert, FormControl, Button } from "react-bootstrap"
+import { useState } from "react"
 
 const ScoreCard = () => {
     const [rounds, setRounds] = useState("")
