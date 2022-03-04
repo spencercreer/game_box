@@ -104,7 +104,7 @@ const ScoreCard = () => {
                             <div style={{ display: 'flex', flexDirection: 'column' }}>
                                 <Alert
                                     key={i}
-                                    style={{ width: '45px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 10px 0px 0px' }}
+                                    style={{ width: '100px', height: '30px', padding: '5px', marginBottom: '0px', display: 'inline', borderRadius: '10px 10px 0px 0px' }}
                                     variant={getPlayerColor(i)}
                                 >
                                     {player.name.toUpperCase().substring(0, 3)}
@@ -114,14 +114,14 @@ const ScoreCard = () => {
                                         <FormControl
                                             type="number"
                                             className="primary"
-                                            style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
+                                            style={{ width: '100px', height: '30px', display: 'inline', borderRadius: '0', boxShadow: 'none', textAlign: 'center' }}
                                             onChange={(event, i) => handleInputScore(event, i, 1)}
                                         />
                                     ))
                                 }
                                 <FormControl
                                     className="primary"
-                                    style={{ width: '45px', height: '30px', display: 'inline', borderRadius: '0' }}
+                                    style={{ width: '100px', height: '30px', display: 'inline', borderRadius: '0' }}
                                     disabled
                                 />
                             </div>

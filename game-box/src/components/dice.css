@@ -1,4 +1,4 @@
-.dice{
+.dice {
     position: relative;
     display: inline-block;
     border: 10px solid black;
@@ -8,27 +8,27 @@
     margin: 5px;
 }
 
-.redDice{
+.red {
     background-color: #DC3545;
     border: 10px solid #DC3545;
 }
 
-.yellDice{
+.yellow {
     background-color: #FFC107;
     border: 10px solid #FFC107;
 }
 
-.greenDice{
+.green {
     background-color: #28A745;
     border: 10px solid #28A745;
 }
 
-.blueDice{
+.blue {
     background-color: #007BFF;
     border: 10px solid #007BFF;
 }
 
-.dot{
+.dot {
     display: inline-block;
     background-color: black;
     border-radius: 100%;
@@ -37,48 +37,52 @@
     width: 44px;
 }
 
-.whiteDot{
+.whiteDot {
     background-color: #f8f9fa;
 }
 
-.dot1{
+.dot1 {
     position: absolute;
     left: 75px;
     top: 75px;
 }
 
-.dot2{
+.dot2 {
     position: absolute;
     left: 25px;
     top: 25px;
 }
 
-.dot3{
+.dot3 {
     position: absolute;
     left: 125px;
     top: 125px;
 }
 
-.dot4{
+.dot4 {
     position: absolute;
     left: 125px;
     top: 25px;
 }
 
-.dot5{
+.dot5 {
     position: absolute;
     left: 25px;
     top: 125px;
 }
 
-.dot6{
+.dot6 {
     position: absolute;
     left: 25px;
     top: 75px;
 }
 
-.dot7{
+.dot7 {
     position: absolute;
     left: 125px;
     top: 75px;
+}
+
+.dice2 {
+
 }
