@@ -8,7 +8,7 @@ const Dice = () => {
   const [diceData, setDiceData] = useState([])
   const [colorData, setColorData] = useState({button: 'outline-secondary', dice: 'white'})
 
-  const handleOnClick = () => {
+  const handleAddClick = () => {
     const randomNum = Math.ceil(Math.random() * 6);
     const newDiceData = { roll: true, number: randomNum, color: colorData.dice }
     setDiceData(data => [...data, newDiceData])
@@ -34,6 +34,13 @@ const Dice = () => {
     }
   }
 
+  const handleRollClick = () => {
+    const updatedDiceData = diceData.map((die) => {
+      return { ...die, number: Math.ceil(Math.random() * 6) }
+    })
+    setDiceData(updatedDiceData)
+  }
+
   function handleDieClick(roll) {
     console.log(roll)
   }
@@ -45,7 +52,7 @@ const Dice = () => {
           style={{ margin: "10px 10px 10px 20px" }}
           variant={colorData.button}
           title="Add Die"
-          onClick={handleOnClick}
+          onClick={handleAddClick}
           onSelect={handleSelectColor}
         >
           <Item eventKey={'white'} >White</Item>
@@ -56,6 +63,7 @@ const Dice = () => {
         </SplitButton>
         <Button
           variant="outline-secondary"
+          onClick={handleRollClick}
         >
           Roll
         </Button>
