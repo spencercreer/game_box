@@ -29,6 +29,7 @@
 }
 
 .dot {
+    position: absolute;
     display: inline-block;
     background-color: black;
     border-radius: 100%;
@@ -42,43 +43,36 @@
 }
 
 .dot1 {
-    position: absolute;
     left: 75px;
     top: 75px;
 }
 
 .dot2 {
-    position: absolute;
     left: 25px;
     top: 25px;
 }
 
 .dot3 {
-    position: absolute;
     left: 125px;
     top: 125px;
 }
 
 .dot4 {
-    position: absolute;
     left: 125px;
     top: 25px;
 }
 
 .dot5 {
-    position: absolute;
     left: 25px;
     top: 125px;
 }
 
 .dot6 {
-    position: absolute;
     left: 25px;
     top: 75px;
 }
 
 .dot7 {
-    position: absolute;
     left: 125px;
     top: 75px;
 }

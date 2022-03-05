@@ -1,10 +1,8 @@
 import "./dice.css"
 
-const Die = ({ roll, number, color }) => {
-    console.log(roll, number, color)
+const Die = ({ roll, number, color, handleDieClick }) => {
 
     let show
-
     switch (number) {
         case 1:
             show = [true, false, false, false, false, false, false]
@@ -26,11 +24,11 @@ const Die = ({ roll, number, color }) => {
             break;
     }
 
-    // TODO: cleanup
     const dotStyle = color !== 'white' ? 'dot whiteDot' : 'dot'
 
     return (
-        <div className={`dice ${color}`}>
+        //TODO: Make Die clickable
+        <div className={`dice ${color}`} onClick={(roll) => handleDieClick(roll)}>
             <div style={{ display: show[0] ? 'block' : 'none' }} className={`${dotStyle} dot1`}></div>
             <div style={{ display: show[1] ? 'block' : 'none' }} className={`${dotStyle} dot2`}></div>
             <div style={{ display: show[2] ? 'block' : 'none' }} className={`${dotStyle} dot3`}></div>
